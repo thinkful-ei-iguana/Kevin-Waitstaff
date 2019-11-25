@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Waitstaff Calculator</title>
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+<body>
+    <h1>Waitstaff Calculator</h1>
+    <main>
+        <form action="#" class="meal-form">
+            <fieldset>
+                <legend>Enter Meal Details</legend>
+                <label for="price">Meal Base Price: $</label>
+                <input type="number" name="price" id="price">
+                <label for="tax">Tax Rate: %</label>
+                <input type="number" name="tax" id="tax">
+                <label for="tip">Tip: % </label>
+                <input type="number" name="tip" id="tip">
+                <button>Submit</button>
+                <button>Cancel</button>
+            </fieldset>
+        </form>
+    </main>
+    <section>
+        <h2>Customer Charges</h2>
+        <div class="customer-charges">
+            <p class="subtotal">Subtotal: 0</p>
+            <p class="tip">Tip: 0</p>
+            <p class="total">Total: 0</p>
+        </div>
+    </section>
+    <section>
+        <h2>My Earnings Info</h2>
+        <div class="earnings-info">
+            <p class="tip-total">Tip Total: 0</p>
+            <p class="meal-count">Meal Count: 0</p>
+            <p class="average-tip">Average Tip Per Meal: 0</p>
+        </div>
+    </section>
+    <button class="reset">Reset</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./src/app.js"></script>
+</body>
+</html>
