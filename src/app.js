@@ -12,14 +12,16 @@ let STORE = {
 function handleForm() {
   $('.meal-form').on('submit', event => {
     event.preventDefault();
-    let formPrice = $('#price').val();
-    let formTax = $('#tax').val();
-    let formTip = $('#tip').val();
+    let formPrice = Number($('#price').val());
+    let formTax = Number($('#tax').val());
+    let formTip = Number($('#tip').val());
     STORE.Meals++;
     let newTotal = STORE.TipTotal;
     STORE.TipTotal = newTotal + formTip;
     STORE.BasePrice = formPrice;
     STORE.Tax = formTax;
+    STORE.Tip = formTip;
+    STORE.Total = formPrice + formTax + formTip;
     updateEarnings();
     updateCharges();
   });
@@ -28,7 +30,7 @@ function handleForm() {
 function updateCharges() {
   $('.subtotal').html(`<p>Subtotal: ${STORE.BasePrice + STORE.Tax}</p>`);
   $('.tip').html(`<p>Tip: ${STORE.Tip}</p>`);
-  $('.total').html(`<p>Total: ${STORE.Total + STORE.Tip}</p>`);
+  $('.total').html(`<p>Total: ${STORE.Total}</p>`);
 }
 
 function updateEarnings() {
